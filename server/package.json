@@ -5,8 +5,8 @@
   "version": "1.0.0",
   "description": "server",
   "scripts": {
-    "start": "nodemon --watch src --delay 1 --exec 'ts-node' src/index.ts",
-    "test": "mocha -r ts-node/register -r ./test/setup.ts test/**/*.test.ts --exit",
+    "start": "nodemon --watch src --delay 1 --exec 'ts-node -r tsconfig-paths/register' src/index.ts",
+    "test": "mocha -r ts-node/register -r tsconfig-paths/register -r ./test/setup.ts test/**/*.test.ts --exit",
     "build": "webpack --config webpack.config.js"
   },
   "devDependencies": {
@@ -21,6 +21,7 @@
     "nodemon": "^1.18.9",
     "ts-loader": "^5.3.3",
     "ts-node": "^8.0.2",
+    "tsconfig-paths": "^3.7.0",
     "typescript": "^3.2.4",
     "webpack": "^4.29.0",
     "webpack-cli": "^3.2.1"

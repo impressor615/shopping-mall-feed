@@ -2,7 +2,7 @@ import * as bodyParser from "body-parser";
 import * as compression from "compression";
 import * as express from "express";
 
-import routes from "./routes";
+import routes from "@/routes";
 
 class App {
   public app: express.Application;
