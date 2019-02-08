@@ -1,11 +1,14 @@
 {
   "name": "web",
   "version": "1.0.0",
-  "description": "",
+  "description": "web",
+  "repository": "git@github.com:impressor615/shopping-mall-feed.git",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --open",
-    "lint": "tslint -c tslint.json -e './node_modules/**/*' './**/*.ts?(x)'"
+    "lint": "tslint -c tslint.json -e './node_modules/**/*' './**/*.ts?(x)'",
+    "prepush": "npm run lint",
+    "push": "git push"
   },
   "author": "",
   "license": "ISC",
