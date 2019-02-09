@@ -1,0 +1,26 @@
+.product-item {
+  display: inline-block;
+  position: relative;
+
+  .product-desc,
+  .product-price {
+    position: absolute;
+    bottom: 5%;
+    left: 5%;
+
+    color: white;
+    font-weight: 500;
+  }
+
+  .product-desc {
+    font-size: 28px;
+  }
+
+  .product-desc div:first-child {
+    margin-bottom: 10px;
+  }
+
+  .product-price {
+    font-size: 22px;
+  }
+}

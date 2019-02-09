@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ProductItem should be matched with snapshot 1`] = `
+<ProductItem
+  imgSrc="image"
+  name="product-name"
+  price={10000}
+  shopName="shop-name"
+  url="url"
+>
+  <a
+    className="product-item"
+    href="url"
+    target="_blank"
+  >
+    <img
+      alt="product"
+      src="image"
+    />
+    <Component
+      name="product-name"
+      price={10000}
+      shopName="shop-name"
+    >
+      <div
+        className="product-price"
+      >
+        10,000원
+      </div>
+    </Component>
+  </a>
+</ProductItem>
+`;
