@@ -1,0 +1,30 @@
+@import "~@/assets/styles/variables";
+
+.btn {
+  cursor: pointer;
+
+  padding: 10px 15px;
+  border: 1px solid $secondary;
+
+  font-size: 16px;
+  color: $secondary;
+
+  opacity: 0.6;
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    color: $primary;
+    font-weight: bold;
+
+    background: $white;
+    opacity: 1;
+  }
+
+  &.active {
+    color: $primary;
+    font-weight: bold;
+
+    background: $white;
+    opacity: 1;
+  }
+}
