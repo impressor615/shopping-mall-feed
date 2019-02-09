@@ -7,7 +7,7 @@ import HeaderTitle from "@/components/HeaderTitle";
 
 interface HeaderProps {
   filter: string;
-  onClick: () => void;
+  onClick: (e: React.MouseEvent) => void;
 }
 
 const Header = ({ filter, onClick }: HeaderProps) => (

@@ -6,7 +6,7 @@ import Button from "@/components/Button";
 
 interface HeaderFilterProps {
   filter: string;
-  onClick: () => void;
+  onClick: (e: React.MouseEvent) => void;
 }
 
 const HeaderFilter = ({ filter, onClick }: HeaderFilterProps) => (
