@@ -1,0 +1,14 @@
+@import "~@/assets/styles/variables";
+
+.header-filter {
+  display: inline-block;
+
+  .btn:first-child {
+    border-right: none;
+    border-radius: 10px 0 0 10px;
+  }
+
+  .btn:last-child {
+    border-radius: 0 10px 10px 0;
+  }
+}

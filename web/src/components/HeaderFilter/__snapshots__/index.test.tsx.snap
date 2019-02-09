@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderFilter should be matched with snapshot 1`] = `
+<div
+  className="header-filter"
+  onClick={
+    [MockFunction] {
+      "calls": Array [
+        Array [],
+      ],
+      "results": Array [
+        Object {
+          "isThrow": false,
+          "value": undefined,
+        },
+      ],
+    }
+  }
+>
+  <Button
+    active={true}
+    name="products"
+  >
+    상품
+  </Button>
+  <Button
+    active={false}
+    name="ranks"
+  >
+    랭킹
+  </Button>
+</div>
+`;
