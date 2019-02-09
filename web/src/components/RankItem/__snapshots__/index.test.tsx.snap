@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`RankItem should be matched with snapshot 1`] = `
+<a
+  className="rank-item"
+  target="_blank"
+>
+  <Badge
+    rank={1}
+  />
+  <img
+    alt="mall-title"
+    src="img"
+  />
+  <div
+    className="rank-desc"
+  >
+    <h3>
+      name
+    </h3>
+    <p>
+      tag1, tag2
+    </p>
+  </div>
+</a>
+`;

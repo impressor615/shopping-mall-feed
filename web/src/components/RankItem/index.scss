@@ -1,0 +1,30 @@
+@import "~@/assets/styles/variables";
+
+.rank-item {
+  display: flex;
+  text-decoration: none;
+  padding: 15px 20px;
+  border-bottom: 3px solid $lightgrey;
+
+  img {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+
+    margin-right: 20px;
+  }
+
+  .badge {
+    margin-top: 10px;
+    margin-right: 20px;
+  }
+
+  .rank-desc h3 {
+    color: $black;
+  }
+
+  .rank-desc p {
+    color: $secondary;
+    font-weight: bold;
+  }
+}
