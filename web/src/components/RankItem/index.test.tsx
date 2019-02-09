@@ -9,9 +9,11 @@ describe("RankItem", () => {
   const shopName = "name";
   const shopTags = "tag1, tag2";
   const imgSrc = "img";
+  const url = "url";
   it("should render Badge, img, rank-desc", () => {
     const Component = (
       <RankItem
+        url={url}
         rank={rank}
         name={shopName}
         tags={shopTags}
@@ -27,6 +29,7 @@ describe("RankItem", () => {
   it("should be matched with snapshot", () => {
     const Component = (
       <RankItem
+        url={url}
         rank={rank}
         name={shopName}
         tags={shopTags}

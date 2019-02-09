@@ -8,7 +8,7 @@ exports[`HeaderTitle should be matched with snapshot 1`] = `
     오늘 뭐 입지?
   </span>
   <span>
-    19. 2. 9
+    19. 2. 10
   </span>
 </h3>
 `;

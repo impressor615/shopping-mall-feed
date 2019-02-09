@@ -3,6 +3,7 @@
 exports[`RankItem should be matched with snapshot 1`] = `
 <a
   className="rank-item"
+  href="url"
   target="_blank"
 >
   <Badge
