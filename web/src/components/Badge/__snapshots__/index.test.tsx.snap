@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Badge should be matched with snapshot 1`] = `
+<span
+  className="badge badge-gold"
+>
+  1
+</span>
+`;
