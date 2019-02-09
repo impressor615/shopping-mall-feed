@@ -1,0 +1,12 @@
+@import "~@/assets/styles/variables";
+
+.header-title {
+  span:first-child {
+    margin-right: 15px;
+  }
+
+  span:last-child {
+    font-size: 15px;
+    color: $secondary;
+  }
+}

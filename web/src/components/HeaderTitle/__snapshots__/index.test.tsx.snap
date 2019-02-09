@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`HeaderTitle should be matched with snapshot 1`] = `
+<h1
+  className="header-title"
+>
+  <span>
+    오늘 뭐 입지?
+  </span>
+  <span>
+    19. 2. 9
+  </span>
+</h1>
+`;
