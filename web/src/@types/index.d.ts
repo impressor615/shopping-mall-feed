@@ -15,3 +15,9 @@ interface BaseAction {
 interface ConnectProps {
   dispatch: (arg: BaseAction) => void;
 }
+
+interface RouterProps {
+  history: {
+    push: (path: string) => void;
+  };
+}

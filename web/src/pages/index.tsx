@@ -8,8 +8,9 @@ import {
   Switch,
 } from "react-router-dom";
 
-import Hello from "@/components/Hello";
 import configureStore from "@/configureStore";
+import Products from "@/pages/products";
+import Ranks from "@/pages/ranks";
 
 const Store = configureStore();
 class App extends React.PureComponent {
@@ -18,9 +19,9 @@ class App extends React.PureComponent {
       <Provider store={Store}>
         <Router>
           <Switch>
-            <Route exact path="/" component={Hello} />
-            <Route exact path="/hello" component={Hello} />
-            <Redirect to="/" />
+            <Route exact path="/products" component={Products} />
+            <Route exact path="/ranks" component={Ranks} />
+            <Redirect to="/products" />
           </Switch>
         </Router>
       </Provider>
