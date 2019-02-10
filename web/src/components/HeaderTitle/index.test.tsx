@@ -15,9 +15,4 @@ describe("HeaderTitle", () => {
     const wrapper = enzyme.shallow(<HeaderTitle title={title} />);
     expect(wrapper.find(".header-title span:last-child").text()).toEqual(today);
   });
-
-  it("should be matched with snapshot", () => {
-    const wrapper = enzyme.shallow(<HeaderTitle title={title} />);
-    expect(wrapper).toMatchSnapshot();
-  });
 });
