@@ -1,11 +1,20 @@
+@import "~@/assets/styles/variables";
+
 .product-item {
   display: inline-block;
-  position: relative;
+  position: absolute;
+  cursor: pointer;
+
+  transition: all 0.3s ease-out;
+
+  &:hover {
+    opacity: 0.7;
+  }
 
   .product-desc,
   .product-price {
     position: absolute;
-    bottom: 5%;
+    bottom: 8%;
     left: 5%;
 
     color: white;
@@ -21,6 +30,14 @@
   }
 
   .product-price {
-    font-size: 22px;
+    font-size: 18px;
+  }
+}
+
+@media (min-width: $breakpoint) {
+  .product-item {
+    .product-price {
+      font-size: 22px;
+    }
   }
 }

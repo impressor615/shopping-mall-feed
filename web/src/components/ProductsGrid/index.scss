@@ -1,0 +1,11 @@
+.products-grid {
+  position: relative;
+
+  > .product-item {
+    line-height: 0;
+  }
+
+  > .product-item img {
+    width: 100%;
+  }
+}

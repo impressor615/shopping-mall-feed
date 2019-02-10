@@ -29,18 +29,31 @@ export const ProductDescription = ({ big, shopName, name, price }: ProductDescri
       ) : <div className="product-price">{ `${price.toLocaleString()}원` }</div>
     }
   </>
-)
-
-const ProductItem = ({ url, imgSrc, price, name, shopName, big }: ProductItemProps) => (
-  <a className="product-item" href={url} target="_blank">
-    <img src={imgSrc} alt="product" />
-    <ProductDescription
-      price={price}
-      big={big}
-      name={name}
-      shopName={shopName}
-    />
-  </a>
 );
+
+class ProductItem extends React.PureComponent<ProductItemProps, {}> {
+  private itemRef = React.createRef<HTMLAnchorElement>();
+  public render() {
+    const {
+      url,
+      imgSrc,
+      price,
+      name,
+      shopName,
+      big,
+    } = this.props;
+    return (
+      <a className="product-item" href={url} target="_blank" ref={this.itemRef}>
+        <img src={imgSrc} alt="product" />
+        <ProductDescription
+          price={price}
+          big={big}
+          name={name}
+          shopName={shopName}
+        />
+      </a>
+    );
+  }
+}
 
 export default ProductItem;
