@@ -3,7 +3,7 @@ import * as Bluebird from "bluebird";
 import * as Sequelize from "sequelize";
 
 import * as PRODUCTS from "@/data/products.json";
-import * as RANKS from "@/data/products.json";
+import * as RANKS from "@/data/rank.json";
 import createModels from "@/models";
 
 const CONFIG = {
