@@ -21,7 +21,7 @@ class App {
   }
 
   private routes() {
-    this.app.use("/", routes(this.router));
+    this.app.use("/api", routes(this.router));
   }
 }
 
