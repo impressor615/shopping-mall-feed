@@ -2,6 +2,8 @@
 import * as Bluebird from "bluebird";
 import * as Sequelize from "sequelize";
 
+import * as PRODUCTS from "@/data/products.json";
+import * as RANKS from "@/data/products.json";
 import createModels from "@/models";
 
 const CONFIG = {
@@ -32,8 +34,17 @@ class Database {
   }
 
   public async syncModels() {
-    const promises = Object.keys(this.models).map((key) => this.models[key].sync());
+    const promises = Object.keys(this.models).map((key) => this.models[key].sync({ force: true }));
     await Bluebird.all(promises);
+  }
+
+  public async migrate() {
+    const { Product, Rank } = this.models;
+    const { data: productData } = PRODUCTS;
+    const { data: rankData } = RANKS;
+    const productPromises = productData.map((item) => Product.create(item));
+    const rankPromises = rankData.map((item) => Rank.create(item));
+    await Bluebird.all([...productPromises, ...rankPromises]);
   }
 }
 

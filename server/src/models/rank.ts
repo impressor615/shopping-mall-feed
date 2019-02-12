@@ -9,7 +9,7 @@ export default (db, type) => {
     liked: type.BOOLEAN,
     name: type.STRING,
     secondName: type.STRING,
-    url: type.STRING,
+    url: type.TEXT,
   });
 
   return Rank;

@@ -7,12 +7,12 @@ export default (db, type) => {
     image: type.JSONB,
     liked: type.BOOLEAN,
     likedCount: type.INTEGER,
-    mobileUrl: type.STRING,
+    mobileUrl: type.TEXT,
     price: type.INTEGER,
     shopId: type.STRING,
     shopName: type.STRING,
     title: type.STRING,
-    url: type.STRING,
+    url: type.TEXT,
   });
 
   return Product;
