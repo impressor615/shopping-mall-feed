@@ -10,11 +10,15 @@
     "build": "webpack --config webpack.config.js"
   },
   "devDependencies": {
+    "@types/bluebird": "^3.5.25",
     "@types/chai": "^4.1.7",
     "@types/chai-http": "^3.0.5",
     "@types/compression": "0.0.36",
+    "@types/dotenv": "^6.1.0",
     "@types/express": "^4.16.1",
     "@types/mocha": "^5.2.5",
+    "@types/pg": "^7.4.11",
+    "@types/sequelize": "^4.27.35",
     "chai": "^4.2.0",
     "chai-http": "^4.2.1",
     "mocha": "^5.2.0",
@@ -27,8 +31,13 @@
     "webpack-cli": "^3.2.1"
   },
   "dependencies": {
+    "bluebird": "^3.5.3",
     "compression": "^1.7.3",
+    "dotenv": "^6.2.0",
     "express": "^4.16.4",
+    "pg": "^7.8.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.42.0",
     "source-map-support": "^0.5.10"
   }
 }
