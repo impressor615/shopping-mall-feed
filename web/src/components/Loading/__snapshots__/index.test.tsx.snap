@@ -4,6 +4,8 @@ exports[`Loading should be matched with the snapshot 1`] = `
 <div
   className="loading"
 >
-  Loading....
+  <span>
+    Loading....
+  </span>
 </div>
 `;
