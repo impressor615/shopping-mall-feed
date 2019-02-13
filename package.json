@@ -1,0 +1,28 @@
+{
+  "name": "shopping-mall-feed",
+  "version": "1.0.0",
+  "description": "shopping-mall-feed",
+  "main": "index.js",
+  "scripts": {
+    "install:server": "cd server && npm i",
+    "install:web": "cd web && npm i",
+    "postinstall": "npm-run-all install:web install:server",
+    "start:server": "cd server && npm start",
+    "start:web": "cd web && npm start",
+    "start": "npm-run-all -p -r start:server start:web"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/impressor615/shopping-mall-feed.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/impressor615/shopping-mall-feed/issues"
+  },
+  "homepage": "https://github.com/impressor615/shopping-mall-feed#readme",
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
