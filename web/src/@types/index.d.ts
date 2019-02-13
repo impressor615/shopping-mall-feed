@@ -1,3 +1,5 @@
+declare module "redux-api-middleware";
+
 interface StoreState {
   hello: HelloState;
 }
