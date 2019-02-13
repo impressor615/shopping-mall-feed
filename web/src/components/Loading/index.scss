@@ -1,0 +1,31 @@
+@import "~@/assets/styles/variables";
+
+.loading {
+  display: none;
+
+  z-index: 1;
+  position: fixed;
+  top: -20%;
+  left: 0;
+  right: 0;
+  bottom: -20%;
+
+  background: rgba(0, 0, 0, 0.4);
+
+  text-align: center;
+
+  > span {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+  }
+}
+
+.loading.active {
+  display: block;
+}

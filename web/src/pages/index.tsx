@@ -8,6 +8,7 @@ import {
   Switch,
 } from "react-router-dom";
 
+import Loading from "@/components/Loading";
 import configureStore from "@/configureStore";
 import Products from "@/pages/products";
 import Ranks from "@/pages/ranks";
@@ -24,6 +25,7 @@ class App extends React.PureComponent {
             <Redirect to="/products" />
           </Switch>
         </Router>
+        <Loading />
       </Provider>
     );
   }
