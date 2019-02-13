@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Link should be matched with snapshot 1`] = `
+<Link
+  className="link"
+  replace={false}
+  to="/products"
+>
+  link
+</Link>
+`;
