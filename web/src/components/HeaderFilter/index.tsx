@@ -2,17 +2,16 @@ import "./index.scss";
 
 import React from "react";
 
-import Button from "@/components/Button";
+import Link from "@/components/Link";
 
 interface HeaderFilterProps {
   filter: string;
-  onClick: (e: React.MouseEvent) => void;
 }
 
-const HeaderFilter = ({ filter, onClick }: HeaderFilterProps) => (
-  <div className="header-filter" onClick={onClick}>
-    <Button name="products" active={filter === "products"}>상품</Button>
-    <Button name="ranks" active={filter === "ranks"}>랭킹</Button>
+const HeaderFilter = ({ filter }: HeaderFilterProps) => (
+  <div className="header-filter">
+    <Link to="/products" active={filter === "products"}>상품</Link>
+    <Link to="/ranks" active={filter === "ranks"}>랭킹</Link>
   </div>
 );
 

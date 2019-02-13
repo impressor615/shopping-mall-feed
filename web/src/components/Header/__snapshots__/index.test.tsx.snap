@@ -7,7 +7,6 @@ exports[`Header should be matched with snapshot 1`] = `
   />
   <HeaderFilter
     filter="products"
-    onClick={[MockFunction]}
   />
 </header>
 `;

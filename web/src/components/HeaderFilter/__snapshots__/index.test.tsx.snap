@@ -3,31 +3,18 @@
 exports[`HeaderFilter should be matched with snapshot 1`] = `
 <div
   className="header-filter"
-  onClick={
-    [MockFunction] {
-      "calls": Array [
-        Array [],
-      ],
-      "results": Array [
-        Object {
-          "isThrow": false,
-          "value": undefined,
-        },
-      ],
-    }
-  }
 >
-  <Button
+  <MyLink
     active={true}
-    name="products"
+    to="/products"
   >
     상품
-  </Button>
-  <Button
+  </MyLink>
+  <MyLink
     active={false}
-    name="ranks"
+    to="/ranks"
   >
     랭킹
-  </Button>
+  </MyLink>
 </div>
 `;

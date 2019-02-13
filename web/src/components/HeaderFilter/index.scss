@@ -3,12 +3,12 @@
 .header-filter {
   display: inline-block;
 
-  .btn:first-child {
+  .link:first-child {
     border-right: none;
     border-radius: 10px 0 0 10px;
   }
 
-  .btn:last-child {
+  .link:last-child {
     border-radius: 0 10px 10px 0;
   }
 }

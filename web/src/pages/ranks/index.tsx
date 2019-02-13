@@ -10,14 +10,6 @@ import RankItems from "./RankItems";
 
 interface PageProps extends ReduxRouterProps, RankState {}
 class Page extends React.PureComponent<PageProps, {}> {
-  public onFilterClick = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    const { name }: any = e.target;
-    if (name === "ranks") return;
-    const { history } = this.props;
-    history.push("/products");
-  }
-
   public async componentDidMount() {
     const { dispatch } = this.props;
     dispatch(setLoading(true));
@@ -29,7 +21,7 @@ class Page extends React.PureComponent<PageProps, {}> {
     const { data } = this.props;
     return (
       <Container>
-        <Header onClick={this.onFilterClick} filter="ranks" />
+        <Header filter="ranks" />
         <RankItems data={data} />
       </Container>
     );

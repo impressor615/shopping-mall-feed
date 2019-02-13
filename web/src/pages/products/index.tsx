@@ -9,14 +9,6 @@ import ProductsGrid from "@/components/ProductsGrid";
 
 interface PageProps extends ReduxRouterProps, ProductState {}
 class Page extends React.PureComponent<PageProps, {}> {
-  public onFilterClick = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    const { name }: any = e.target;
-    if (name === "products") return;
-    const { history } = this.props;
-    history.push("/ranks");
-  }
-
   public async componentDidMount() {
     const { dispatch } = this.props;
     dispatch(setLoading(true));
@@ -28,7 +20,7 @@ class Page extends React.PureComponent<PageProps, {}> {
     const { data } = this.props;
     return (
       <Container>
-        <Header onClick={this.onFilterClick} filter="products" />
+        <Header filter="products" />
         <ProductsGrid data={data} />
       </Container>
     );
