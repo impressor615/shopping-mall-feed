@@ -3,17 +3,7 @@ import LazyLoad from "react-lazyload";
 
 import RankItem from "@/components/RankItem";
 
-interface RankItemsProps {
-  data: Array<{
-    id: string;
-    name: string;
-    description: string;
-    image: { url: string; };
-    url: string;
-  }>;
-}
-
-const RankItems = ({ data }: RankItemsProps) => (
+const RankItems = ({ data }: RankState) => (
   <>
     {
       data.map((item, index) => (

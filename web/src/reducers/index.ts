@@ -1,7 +1,9 @@
 import { combineReducers } from "redux";
 
-import hello from "./Hello";
+import product from "./product";
+import rank from "./rank";
 
 export default combineReducers({
-  hello,
+  product,
+  rank,
 });

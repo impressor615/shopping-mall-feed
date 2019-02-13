@@ -1,12 +1,7 @@
-import {
-  CHANGE_COMPILER,
-  CHANGE_FRAMEWORK,
-} from "@/constants";
+export {
+  getProducts,
+} from "./products";
 
-export const changeCompiler = (): BaseAction => {
-  return { type: CHANGE_COMPILER };
-};
-
-export const changeFramework = (): BaseAction => {
-  return { type: CHANGE_FRAMEWORK };
-};
+export {
+  getRanks,
+} from "./ranks";

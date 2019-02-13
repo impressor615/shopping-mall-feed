@@ -1,17 +1,36 @@
 declare module "redux-api-middleware";
 
 interface StoreState {
-  hello: HelloState;
+  product: ProductState;
+  rank: RankState;
 }
 
-interface HelloState {
-  compiler: string;
-  framework: string;
+interface ProductState {
+  data: Array<{
+    id: string;
+    image: {
+      url: string;
+    };
+    price: number;
+    shopName: string;
+    title: string;
+    url: string;
+  }>;
+}
+
+interface RankState {
+  data: Array<{
+    id: string;
+    name: string;
+    description: string;
+    image: { url: string; };
+    url: string;
+  }>;
 }
 
 interface BaseAction {
   type: string;
-  payload?: string | object;
+  payload?: object;
 }
 
 interface ConnectProps {

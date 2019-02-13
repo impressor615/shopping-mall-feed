@@ -4,20 +4,7 @@ import React from "react";
 
 import ProductItem from "@/components/ProductItem";
 
-interface ProductsGridProps {
-  data: Array<{
-    id: string;
-    image: {
-      url: string;
-    };
-    price: number;
-    shopName: string;
-    title: string;
-    url: string;
-  }>;
-}
-
-class ProductsGrid extends React.PureComponent<ProductsGridProps, {}> {
+class ProductsGrid extends React.PureComponent<ProductState, {}> {
   [key: string]: any;
 
   public componentDidMount() {
