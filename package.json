@@ -9,7 +9,10 @@
     "postinstall": "npm-run-all install:web install:server",
     "start:server": "cd server && npm start",
     "start:web": "cd web && npm start",
-    "start": "npm-run-all -p -r start:server start:web"
+    "start": "npm-run-all -p -r start:server start:web",
+    "test:web": "cd web && npm run test",
+    "test:server": "cd server && npm run test",
+    "test": "npm-run-all test:web test:server"
   },
   "repository": {
     "type": "git",
