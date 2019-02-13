@@ -56,11 +56,13 @@ class ProductsGrid extends React.PureComponent<ProductState, {}> {
     const columnHeights = Array(columnCount).fill(0);
 
     Array.from({ length: data.length }).forEach((_, index) => {
+      const gutterCount = columnCount - 1;
+      const widthDiff = (gutter * gutterCount) / columnCount;
       const dividend = index % columnCount;
-      const left = (dividend) * ((containerWidth / columnCount) + gutter);
+      const left = dividend * ((containerWidth / columnCount) + (widthDiff / gutterCount));
       const { itemRef: currentItem } = this[`img${index}`].current;
       const { current } = currentItem;
-      current.style.width = `calc(${100 / columnCount}% - ${gutter / columnCount}px)`;
+      current.style.width = `calc(${100 / columnCount}% - ${widthDiff}px)`;
 
       if (index < columnCount) {
         current.style.left = `${left}px`;
