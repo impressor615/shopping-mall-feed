@@ -44,3 +44,10 @@ npm install
 // server와 web 어플리케이션을 시작합니다.
 npm start
 ```
+
+* **test**
+
+```
+// server와 web 테스트를 실행합니다..
+npm test
+```
