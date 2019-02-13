@@ -9,7 +9,7 @@ export default function(state: RankState = initialState, action: BaseAction) {
     case REQ_GET_RANKS_SUCCESS:
       return {
         ...state,
-        ...action.payload,
+        ...action.payload as object,
       };
 
     default:

@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
-import { getProducts } from "@/actions";
+import { getProducts, setLoading } from "@/actions";
 import Container from "@/components/Container";
 import Header from "@/components/Header";
 import ProductsGrid from "@/components/ProductsGrid";
@@ -19,7 +19,9 @@ class Page extends React.PureComponent<PageProps, {}> {
 
   public async componentDidMount() {
     const { dispatch } = this.props;
+    dispatch(setLoading(true));
     await dispatch(getProducts());
+    dispatch(setLoading(false));
   }
 
   public render() {

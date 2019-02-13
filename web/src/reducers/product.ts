@@ -9,7 +9,7 @@ export default function(state: ProductState = initialState, action: BaseAction) 
     case REQ_GET_PRODUCTS_SUCCESS:
       return {
         ...state,
-        ...action.payload,
+        ...action.payload as object,
       };
 
     default:

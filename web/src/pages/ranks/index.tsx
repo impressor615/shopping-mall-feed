@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
-import { getRanks } from "@/actions";
+import { getRanks, setLoading } from "@/actions";
 import Container from "@/components/Container";
 import Header from "@/components/Header";
 
@@ -20,7 +20,9 @@ class Page extends React.PureComponent<PageProps, {}> {
 
   public async componentDidMount() {
     const { dispatch } = this.props;
+    dispatch(setLoading(true));
     await dispatch(getRanks());
+    dispatch(setLoading(false));
   }
 
   public render() {

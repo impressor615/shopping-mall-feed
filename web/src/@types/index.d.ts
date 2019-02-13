@@ -3,6 +3,7 @@ declare module "redux-api-middleware";
 interface StoreState {
   product: ProductState;
   rank: RankState;
+  commonUI: CommonUIState;
 }
 
 interface ProductState {
@@ -28,9 +29,13 @@ interface RankState {
   }>;
 }
 
+interface CommonUIState {
+  loading: boolean;
+}
+
 interface BaseAction {
   type: string;
-  payload?: object;
+  payload?: object | string | boolean;
 }
 
 interface ConnectProps {
