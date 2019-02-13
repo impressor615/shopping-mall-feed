@@ -8,9 +8,12 @@ class ProductsGrid extends React.PureComponent<ProductState, {}> {
   [key: string]: any;
 
   public componentDidMount() {
-    this.updateLayout();
     window.addEventListener("load", this.updateLayout);
     window.addEventListener("resize", this.updateLayout);
+  }
+
+  public componentDidUpdate() {
+    this.updateLayout();
   }
 
   public componentWillUnmount() {

@@ -34,7 +34,7 @@ interface BaseAction {
 }
 
 interface ConnectProps {
-  dispatch: (arg: BaseAction) => void;
+  dispatch: (arg: BaseAction | object) => void;
 }
 
 interface RouterProps {
@@ -42,3 +42,5 @@ interface RouterProps {
     push: (path: string) => void;
   };
 }
+
+interface ReduxRouterProps extends RouterProps, ConnectProps {}

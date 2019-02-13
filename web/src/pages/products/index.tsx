@@ -1,12 +1,14 @@
 import React from "react";
+import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 
+import { getProducts } from "@/actions";
 import Container from "@/components/Container";
 import Header from "@/components/Header";
 import ProductsGrid from "@/components/ProductsGrid";
-import PRODUCTS from "@/data/products.json";
 
-class Page extends React.PureComponent<RouterProps, {}> {
+interface PageProps extends ReduxRouterProps, ProductState {}
+class Page extends React.PureComponent<PageProps, {}> {
   public onFilterClick = (e: React.MouseEvent) => {
     e.stopPropagation();
     const { name }: any = e.target;
@@ -15,8 +17,13 @@ class Page extends React.PureComponent<RouterProps, {}> {
     history.push("/ranks");
   }
 
+  public async componentDidMount() {
+    const { dispatch } = this.props;
+    await dispatch(getProducts());
+  }
+
   public render() {
-    const { data } = PRODUCTS;
+    const { data } = this.props;
     return (
       <Container>
         <Header onClick={this.onFilterClick} filter="products" />
@@ -25,5 +32,8 @@ class Page extends React.PureComponent<RouterProps, {}> {
     );
   }
 }
+const mapStateToProps = (state: StoreState) => ({
+  ...state.product,
+});
 
-export default withRouter(Page as any);
+export default withRouter(connect(mapStateToProps)(Page) as any);
