@@ -18,33 +18,41 @@ const CONFIG = {
 };
 
 class Database {
-  public models: any;
-  private db: any;
+  public static db: any;
+  public static initializeIfNeeded(options) {
+    if (Database.db) {
+      return Database.db;
+    }
 
-  constructor({ host, database, user, password }) {
-    const config = { ...CONFIG, host };
-    this.db = new Sequelize(database, user, password, config);
-    this.models = createModels(this.db);
+    Database.db = new Database(options);
+    return Database.db;
   }
 
-  public async authenticate() {
-    this.db.authenticate()
-      .then(() => console.log("Connection has been established successfully."))
-      .catch((err) => console.error("Unable to connect to the database:", err));
+  public models: any;
+  private isSynced: boolean;
+  private isMigrated: boolean;
+  constructor({ host, database, user, password }) {
+    const config = { ...CONFIG, host };
+    Database.db = new Sequelize(database, user, password, config);
+    this.models = createModels(Database.db);
   }
 
   public async syncModels() {
+    if (this.isSynced) return;
     const promises = Object.keys(this.models).map((key) => this.models[key].sync({ force: true }));
     await Bluebird.all(promises);
+    this.isSynced = true;
   }
 
   public async migrate() {
+    if (this.isMigrated) return;
     const { Product, Rank } = this.models;
     const { data: productData } = PRODUCTS;
     const { data: rankData } = RANKS;
     const productPromises = productData.map((item) => Product.create(item));
     const rankPromises = rankData.map((item) => Rank.create(item));
     await Bluebird.all([...productPromises, ...rankPromises]);
+    this.isMigrated = true;
   }
 }
 
@@ -55,13 +63,12 @@ export default async () => {
     DB_USER,
     DB_PASSWORD,
   } = process.env;
-  const db = new Database({
+  const db = Database.initializeIfNeeded({
     database: DB_NAME,
     host: DB_HOST,
     password: DB_PASSWORD,
     user: DB_USER,
   });
-  await db.authenticate();
   await db.syncModels();
   await db.migrate();
 
