@@ -9,6 +9,7 @@ interface ProductItemProps {
   name: string;
   shopName: string;
   big?: boolean;
+  onLoad?: () => void;
 }
 
 interface ProductDescriptionProps {
@@ -41,10 +42,20 @@ class ProductItem extends React.PureComponent<ProductItemProps, {}> {
       name,
       shopName,
       big,
+      onLoad,
     } = this.props;
     return (
-      <a className="product-item" href={url} target="_blank" ref={this.itemRef}>
-        <img src={imgSrc} alt="product" />
+      <a
+        href={url}
+        target="_blank"
+        ref={this.itemRef}
+        className="product-item"
+      >
+        <img
+          alt="product"
+          src={imgSrc}
+          onLoad={onLoad}
+        />
         <ProductDescription
           price={price}
           big={big}
